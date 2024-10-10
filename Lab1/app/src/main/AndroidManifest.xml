@@ -22,10 +22,10 @@
             android:name=".LinearLayout"
             android:exported="false" />
         <activity
-            android:name=".LinearLayoutCode"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LinearLayoutCode"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Lab2</string>
+    <string-array name="roles_array">
+        <item>Manager</item>
+        <item>Staff</item>
+    </string-array>
+    <string name="lbl_id">ID:</string>
+    <string name="lbl_full_name">Full Name:</string>
+    <string name="lbl_is_manager">Is A Manager:</string>
+    <string name="btn_add">Add</string>
+    <string name="hint_id">Nhập ID</string>
+    <string name="hint_name">Nhập tên</string>
+    <string name="btn_back">Back</string>
+
+    <string name="staff">Staff</string>
+    <string name="lbl_name">Name:</string>
+    <string name="hint_dish_name">Dish name</string>
+    <string name="lbl_thumbnail">Thumbnail:</string>
+    <string name="lbl_is_promotion">Is promotion:</string>
+</resources>
