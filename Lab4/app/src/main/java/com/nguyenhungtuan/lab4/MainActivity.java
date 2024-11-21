@@ -7,7 +7,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.BounceInterpolator;
-import android.view.animation.CycleInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -15,7 +14,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
             btnBounceXml,
             btnBounceCode, btnCombineXml, btnCombineCode;
     private ImageView ivUitLogo;
-    private Animation.AnimationListener animationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         AlphaAnimation animation = new AlphaAnimation(0.0f, 1.0f);
         animation.setDuration(1000);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -125,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         AlphaAnimation animation = new AlphaAnimation(1.0f, 0.0f);
         animation.setDuration(1000);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -134,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         animation.setDuration(300);
         animation.setRepeatMode(Animation.REVERSE);
         animation.setRepeatCount(3);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -143,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(1000);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -152,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(1000);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -163,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         animation.setRepeatMode(Animation.RESTART);
         animation.setRepeatCount(2);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -174,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         );
         animation.setDuration(800);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -182,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         Animation animation = new ScaleAnimation(1.0f, 1.0f, 1.0f, 0.0f);
         animation.setDuration(500);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -192,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
         BounceInterpolator bounceInterpolator = new BounceInterpolator();
         animation.setInterpolator(bounceInterpolator);
         animation.setFillAfter(true);
-        animation.setAnimationListener(animationListener);
+        
         return animation;
     }
 
@@ -223,8 +220,6 @@ public class MainActivity extends AppCompatActivity {
         animationSet.addAnimation(scaleAnimation);
         animationSet.addAnimation(rotateAnimation);
         animationSet.setFillAfter(true);
-
-        animationSet.setAnimationListener(animationListener);
 
         return animationSet;
     }
