@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,8 +18,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lab5"
+        android:theme="@style/Theme.Lab6"
         tools:targetApi="31">
+        <receiver
+            android:name=".MessageReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".SmsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".PowerStateChangeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Bai1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Bai2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Bai4Activity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

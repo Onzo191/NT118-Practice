@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.nguyenhungtuan.lab5"
+    namespace = "com.nguyenhungtuan.lab6"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.nguyenhungtuan.lab5"
+        applicationId = "com.nguyenhungtuan.lab6"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
